@@ -1,18 +1,18 @@
-package frc.robot.Commands;
+package frc.robot.commands;
 
 import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.Drivetrain;
 
 public class PIDTurnccw extends Command{
-    DriveTrain dt;
+    Drivetrain dt;
     double setPointAngle;
     PIDController PID = new PIDController(0.9, 0, 0);
 
     
     
     
-    public PIDTurnccw(DriveTrain dt, double setPoint){
+    public PIDTurnccw(Drivetrain dt, double setPoint){
         
         this.dt = dt;
         this.setPointAngle = setPoint;
