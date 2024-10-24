@@ -25,11 +25,15 @@ public class Drivetrain extends SubsystemBase {
   private final WPI_TalonSRX leftDriveTalon;
   private final WPI_TalonSRX rightDriveTalon;
   private final AHRS navx = new AHRS(SPI.Port.kMXP);
+  private final Joystick leftJoystick;
+  private final Joystick rightJoystick;
   /**private ShuffleboardTab DTTab = Shuffleboard.getTab("Drivetrain");
   private GenericEntry LeftVoltage = DTTab.add("Left Voltage", 0.0).getEntry();
   private GenericEntry RightVoltage = DTTab.add("Right Voltage", 0.0).getEntry();**/
   /** Creates a new ExampleSubsystem. */
   public Drivetrain() {
+    leftJoystick = new Joystick(LeftDriveTalonPort);
+    rightJoystick = new Joystick(RightDriveTalonPort);  
     leftDriveTalon = new WPI_TalonSRX(LeftDriveTalonPort);
     leftDriveTalon.setSensorPhase(true);
     rightDriveTalon = new WPI_TalonSRX(RightDriveTalonPort);
